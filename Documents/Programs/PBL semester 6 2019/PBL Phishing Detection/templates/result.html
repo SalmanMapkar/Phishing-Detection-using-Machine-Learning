@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+	<title>Website details</title>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$(".meter > span").each(function() {
+				$(this)
+					.data("origWidth", $(this).width())
+					.width(0)
+					.animate({
+						width: $(this).data("origWidth")
+					}, 1200);
+			});
+		});
+	</script>
+	
+	<style>
+		.title{
+      font-family: 'Rubik', sans-serif;
+      color: white ;
+      margin:0;
+      padding-left: 40px;
+      padding-top: 30px;
+    }
+    .header{
+      background-color: black;
+      width: 100%;
+      height: 100px;
+    }
+            * { margin: 0; padding: 0; }
+            body { font: 14px Georgia, serif;margin: 0;
+      background: url("https://wallpaperplay.com/walls/full/1/5/e/329960.jpg");
+      background-size: 100%; }
+
+            article, aside, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+            #page-wrap { width: 50%;	padding-left: 35px; }
+
+            body {  color: #000; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+            .meter { 
+			height: 30px;  /* Can be anything */
+			position: relative;
+			top: 20px;
+			margin: 0px 0 0px 0; /* Just for demo spacing */
+			background: #555;
+			padding: 0px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.meter > span {
+			display: block;
+			height: 100%;	
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(84,240,84) 69%
+			 );
+			-webkit-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after, .animate > span > span {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-image: 
+			   -webkit-gradient(linear, 0 0, 100% 100%, 
+			      color-stop(.25, rgba(255, 255, 255, .2)), 
+			      color-stop(.25, transparent), color-stop(.5, transparent), 
+			      color-stop(.5, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, transparent), to(transparent)
+			   );
+			background-image: 
+				-moz-linear-gradient(
+				  -45deg, 
+			      rgba(255, 255, 255, .2) 25%, 
+			      transparent 25%, 
+			      transparent 50%, 
+			      rgba(255, 255, 255, .2) 50%, 
+			      rgba(255, 255, 255, .2) 75%, 
+			      transparent 75%, 
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 50px 50px;
+			-moz-background-size: 50px 50px;
+			-webkit-animation: move 2s linear infinite;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			overflow: hidden;
+		}
+		
+		.animate > span:after {
+			display: none;
+		}
+		
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+		
+		.orange > span {
+			background-color: #f1a165;
+			background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
+			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #71f165),color-stop(1, #31f30a));
+			background-image: -webkit-linear-gradient(#81f165, #4cf30a); 
+		}
+		.nostripes > span > span, .nostripes > span:after {
+			-webkit-animation: none;
+			background-image: none;
+		}
+		.url{
+				font-size: 2em;
+				padding: 10px;
+				font-family: 'Rubik', sans-serif;
+		}
+		#status{
+			font-size: 2em;
+			padding-top:10px;
+			padding-bottom: 10px;
+			padding-left:20px;
+			font-family: 'Rubik', sans-serif;
+		}
+		#phish{
+			font-size: 1.75em;
+			padding: 10px;
+			padding-left: 20px;
+			font-family: 'Rubik', sans-serif;
+		}
+		.ws{
+			font-family: 'Rubik', sans-serif;
+			padding-top:20px;
+			padding-left:20px 
+		}
+		.sfm{
+			font-family: 'Rubik', sans-serif;
+			padding-top:20px;
+			padding-left:20px 
+		}
+		.sfh h3{
+			padding-left: 10px;
+		}
+		.Ranking
+		{
+			font-family: 'Rubik', sans-serif;
+			padding-top:20px;
+			padding-left:20px 
+		}
+		.globalrank{
+			font-size: 1.6em;
+			padding-left:170px;
+			padding-top:20px;
+			display: block;
+			width : 40%;
+			float: left;
+		}
+		.globalrank img{
+			display: block;
+			float: left;
+			padding-right: 5px; 
+		}
+		.globalrank p{
+			font-size: 15px;
+		}
+		.glob{
+			text-indent: 50px;
+		}
+		
+		.nationrank{
+			font-size: 1.6em;
+			padding: 20px;
+		}
+		.nationrank img{
+			display: block;
+			float: left;
+			padding-right: 5px; 
+		}
+		.nationrank p{
+			font-size: 15px;
+		}
+		.nation{text-indent: 70px;}
+		
+		.addetails{
+			font-size: 2em;
+			padding: 5%;
+			font-family: 'Rubik', sans-serif;
+		}
+	</style>
+</head>
+<body>
+	  <div class="header">
+				<h1 class="title">WEBSITE DETAILS</h1>
+			</div>
+<div class="url">
+	<h1>URL: {{ URL }}</h1>
+</div>
+
+<div id="status"></div>
+<script>
+		var str = "{{ STATUS }}";
+		if(str=="Online"){
+			var result1 = str.fontcolor("green");
+		}
+		else
+		{
+			var result1 = str.fontcolor("red");
+		}
+  	document.getElementById("status").innerHTML = result1;
+	</script>
+<div class="ws">
+	<h1>WEBSITE STATUS</h1>
+	<div id="phish">{{ PHISHSTATUS }}</div>
+	<script>
+		var str = "{{ PHISHSTATUS }}";
+		if(str=="Safe"){
+			var result = str.fontcolor("green");
+		}
+		else if(str=="Phishing"){
+			var result = str.fontcolor("red");
+		}
+		else
+		{
+			var result = str.fontcolor("orange");
+		}
+  	document.getElementById("phish").innerHTML = result;
+	</script>
+</div>
+<div class="sfm">
+	<h1>WEBSITE SAFETY METER</h1>
+	<div id="page-wrap">
+			<div class="meter orange nostripes">
+					<span style="width: {{ PercentageOfSafety }}%"></span>
+			</div>
+	</div><br><br>
+	<h3>Website safety is {{ PercentageOfSafety }}%</h3>
+	<p>This value is generated by considering multiple factor of website {{ URL }}.</p><br><br><br>
+</div>
+<div class="Ranking">
+	<h1>RANKINGS</h1>
+	<div class="globalrank">
+		<img src="https://banner2.kisspng.com/20180205/rsq/kisspng-earth-globe-world-map-world-png-hd-5a77e72a363687.1525192115178074022221.jpg" height="18px" width="23px">
+		<p>GLOBALRANK</p>
+		<div class="glob">{{ GLOBALRANK }}</div>
+	</div>
+	<div class="nationrank">
+		<img src="https://rlv.zcache.com/create_your_own_stickers_black_circle_large-rd2018cac34c440758d4ffe0dde7cbd42_v9wth_8byvr_630.jpg?view_padding=%5B285%2C0%2C285%2C0%5D" height="18px" width="33px">
+		<p>{{ NATIONNAME }}</p>
+		<div class="nation">{{ NATIONRANK }}</div>
+	</div>
+</div>
+</body>
+</html>
